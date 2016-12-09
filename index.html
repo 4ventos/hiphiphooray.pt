@@ -103,10 +103,9 @@ var currentSlide = 0;
 var slideInterval = setInterval(nextSlide,5000);
 
 function nextSlide() {
-    var slideId = 'slide-' + (currentSlide + 1);
-    slides[currentSlide].className = slideId;
+    slides[currentSlide].className = 'slide-' + (currentSlide + 1);
     currentSlide = (currentSlide+1)%slides.length;
-    slides[currentSlide].className = slideId + ' showing';
+    slides[currentSlide].className = 'slide-' + (currentSlide + 1) + ' showing';
 }
 
 </script>
