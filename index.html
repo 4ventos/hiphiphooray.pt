@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hip Hip Hooray - Life's a party</title>
+    <style>
+    body {
+        background-color: #fff;
+    }
+    #logo {
+        display: block;
+        position: relative;
+        margin: 60px auto 0;
+        width: 440px;
+        height: 412px;
+    }
+    #logo span {
+        display: block;
+        opacity: 0;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 440px;
+        height: 412px;
+        -webkit-transition: opacity 1s;
+        -moz-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        transition: opacity 1s;
+    }
+    #logo span.showing {
+        opacity: 1;
+        z-index: 2;
+    }
+    #logo .slide-1 {
+        background-image: url('images/logo1.png');
+    }
+    #logo .slide-2 {
+        background-image: url('images/logo2.png');
+    }
+    #logo .slide-3 {
+        background-image: url('images/logo3.png');
+    }
+    #footer {
+        position: relative;
+        padding-top: 150px;
+        background-color: #fff;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+    #footer:before {
+        content: '';
+        position: absolute;
+        top: 54px;
+        left: 0;
+        right: 0;
+        height: 96px;
+        background-image: url('images/soon.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .hidden {
+        opacity: 0;
+    }
+    </style>
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-36554441-10', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div id="logo">
+    <span class="slide-1 showing"></span>
+    <span class="slide-2"></span>
+    <span class="slide-3"></span>
+</div>
+<div id="footer">
+<table width="1024" cellpadding="0" cellspacing="0" border="0">
+<tbody>
+	<tr>
+		<td><a href="mailto:party@hiphiphooray.pt"><img src="images/email.png" width="867" height="50" alt="" border="0"></a></td>
+		<!-- td><a href="https://"><img src="images/icon-gplus.png" width="51" height="50" alt="" border="0"></a></td -->
+		<td width="5"><img src="images/spacer.gif" width="5" height="1" alt=""></td>
+		<td><a href="https://www.facebook.com/hiphiphooraypartyshop"><img src="images/icon-facebook.png" width="50" height="50" alt="" border="0"></a></td>
+		<td width="5"><img src="images/spacer.gif" width="5" height="1" alt=""></td>
+		<td><a href="https://www.instagram.com/hooraypartyshop"><img src="images/icon-instagram.png" width="50" height="50" alt="" border="0"></a></td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<script>
+var slides = document.querySelectorAll('#logo span');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide,5000);
+
+function nextSlide() {
+    var slideId = 'slide-' + (currentSlide + 1);
+    slides[currentSlide].className = slideId;
+    currentSlide = (currentSlide+1)%slides.length;
+    slides[currentSlide].className = slideId + ' showing';
+}
+
+</script>
+</body>
+</html>
